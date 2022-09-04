@@ -1,0 +1,46 @@
+/*********************** BREAKPOINTS ***********************/
+@custom-media --xs (max-width: 400px);
+@custom-media --s (max-width: 640px);
+@custom-media --m (max-width: 1200px);
+@custom-media --mw1366 (max-width: 1366px);
+@custom-media --l (min-width: 1601px);
+
+@custom-media --xs-plus (min-width: 641px);
+@custom-media --s-plus (min-width: 961px);
+@custom-media --m-plus (min-width: 1201px);
+
+/*********************** VARIABLES ***********************/
+:root {
+  /* Colors */
+  --c-red: #ce3131;
+  --c-green: #27ad32;
+  --c-blue: #076dd3;
+  --c-yellow: #fadd5a;
+
+  --c-light-red: #f0506e;
+  --c-light-green: #32d296;
+  --c-light-blue: #1e87f0;
+  --c-light-yellow: #ffffdd;
+
+  --c-dark-0: #000000;
+  --c-dark-1: #111111;
+  --c-dark-2: #222222;
+  --c-dark-3: #333333;
+  --c-dark-4: #454545;
+  --c-dark-5: #666666;
+
+  --c-light-0: #ffffff;
+  --c-light-1: #e5e5e5;
+  --c-light-2: #dddddd;
+  --c-light-3: #cacaca;
+  --c-light-4: #aaaaaa;
+  --c-light-5: #999999;
+
+  /* Main colors */
+  --white: var(--c-light-0);
+  --black: var(--c-dark-0);
+  --primary: var(--c-light-blue);
+  --secondary: var(--c-dark-2);
+  --danger: var(--c-light-red);
+  --success: var(--c-light-green);
+}

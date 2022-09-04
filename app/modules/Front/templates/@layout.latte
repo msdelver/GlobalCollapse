@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="{$presenter->locale}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="description" content="{ifset #metaDescription}{include #metaDescription|stripHtml|trim}{/ifset}">
+    <meta name="keywords" content="coronavirus,game,pbbg,browser game,php game,covid-19,covid19,mmorpg,pandemic,mmo,browser based games">
+    <meta name="copyright" content="© {php echo date('Y'); }">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Matronator; https://matronator.com">
+
+    <title>{ifset #pageTitle}{include #pageTitle|striptags} | {/ifset}{$urlFullDomain|noescape}</title>
+
+    <!--------- iOS --------->
+    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Enable WAP -->
+    <meta name="apple-mobile-web-app-title" content="Pandemic"> <!-- Title -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <!-- Status bar -->
+    <link rel="apple-touch-icon" sizes="76x76" href="{='dist/front/images/apple-touch-icon-ipad.png'|asset}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{='dist/front/images/apple-touch-icon-iphone-retina.png'|asset}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{='dist/front/images/apple-touch-icon-ipad-retina.png'|asset}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{='dist/front/images/apple-touch-icon.png'|asset}">
+    <!-- Splashscreens -->
+    <link href="{='dist/front/images/splashscreens/iphone5_splash.jpg'|asset}" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/iphone6_splash.jpg'|asset}" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/iphoneplus_splash.jpg'|asset}" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/iphonex_splash.jpg'|asset}" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/iphonexr_splash.jpg'|asset}" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/iphonexsmax_splash.jpg'|asset}" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/ipad_splash.jpg'|asset}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/ipadpro1_splash.jpg'|asset}" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/ipadpro3_splash.jpg'|asset}" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="{='dist/front/images/splashscreens/ipadpro2_splash.jpg'|asset}" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+
+    <!--------- Android --------->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!--------- Windows --------->
+    <meta name="msapplication-TileColor" content="#b91d1d">
+    <meta name="msapplication-navbutton-color" content="#b91d1d">
+    <meta name="msapplication-config" content="{='dist/front/images/browserconfig.xml'|asset}">
+
+    <!--------- Favicons --------->
+    <link rel="icon" type="image/png" sizes="16x16" href="{='dist/front/images/favicon-16x16.png'|asset}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{='dist/front/images/favicon-32x32.png'|asset}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{='dist/front/images/favicon-48x48.png'|asset}">
+    <link rel="manifest" href="{='dist/front/images/site.webmanifest'|asset}">
+    <link rel="mask-icon" href="{='dist/front/images/safari-pinned-tab.svg'|asset}" color="#b91d1d">
+    <link rel="shortcut icon" type="image/x-icon" href="{='dist/front/images/favicon.ico'|asset}">
+    <meta name="application-name" content="Pandemic">
+    <meta name="theme-color" content="#b91d1d">
+
+    <link rel="stylesheet" href="{asset index.css front}">
+
+    <link n:foreach="$presenter->localeList as $localeItem" rel="alternate" hreflang="{$localeItem}" href="{link //this, locale=>$localeItem}"/>
+    <link rel="alternate" hreflang="x-default" href="{link //this, locale=>$defaultLocale}" />
+
+    <!-- Google Tag Manager -->
+    {* <script n:syntax="off">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXX');</script> *}
+    <!-- End Google Tag Manager -->
+
+    {if count($flashes) > 0}
+        <script n:syntax="off">
+            l = window.location.toString();
+            uri = l.indexOf('_fid=');
+            if(uri !== -1) {
+                uri = l.substr(0, uri) + l.substr(uri + 10);
+                if((uri.substr(uri.length - 1) === '?') || (uri.substr(uri.length - 1) === '&')) {
+                    uri = uri.substr(0, uri.length - 1);
+                }
+                window.history.replaceState('', document.title, uri);
+            }
+        </script>
+    {/if}
+
+    {*<script src='https://www.google.com/recaptcha/api.js?render=PUBLIC_KEY_HERE'></script>*}
+</head>
+
+<body class="{ifset #bodyClass}{include #bodyClass}{/ifset}">
+
+    <!-- Google Tag Manager (noscript) -->
+    {* <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> *}
+    <!-- End Google Tag Manager (noscript) -->
+
+    {snippet flashes}
+        <div n:foreach="$flashes as $flash" class="flash uk-alert-{$flash->type} uk-margin-remove" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p class="uk-margin-remove">{$flash->message}</p>
+        </div>
+    {/snippet}
+
+    <div n:snippet="body">
+        {include '../components/UI/Navbar/Navbar.latte'}
+
+        {if $presenter->user->isLoggedIn()}
+            {include '../components/UI/Sidebar/Sidebar.latte', loggedin => true}
+        {else}
+            {include '../components/UI/Sidebar/Sidebar.latte', loggedin => false}
+        {/if}
+
+        <main class="uk-section uk-padding-remove-bottom uk-background-muted uk-dark main-section">
+            {include pageContent}
+            {include '../components/UI/Footer/Footer.latte'}
+        </main>
+
+    </div>
+
+    {*<script n:syntax="off">
+        grecaptcha.ready(function(){
+            grecaptcha.execute('PUBLIC_KEY_HERE', { action: 'unicare_form' })
+                .then(function(token) {
+                const token_inputs = document.querySelectorAll('input[name="recaptcha_token"]')
+                for(var i = 0; i < token_inputs.length; i++){
+                    token_inputs[i].value = token
+                }
+            })
+        })
+    </script>*}
+
+    <div id="pwaPrompt" class="pwa_prompt-wrapper">
+        <div class="pwa_prompt-content uk-text-center uk-dark">
+            <p class="uk-text-light pwa_prompt-text">
+                Save webapp shortcut to iPhone: tap <span uk-icon="push" class="uk-text-primary"></span> and then Add to homescreen. <small>(tap to close)</small>
+            </p>
+        </div>
+    </div>
+
+    <style n:syntax="off">
+        .grecaptcha-badge {opacity: 0 !important;pointer-events: none !important;}
+    </style>
+
+    <script defer src="{asset index.js front}"></script>
+    {if $presenter->isLinkCurrent('Bar:default')}
+        {ifset $onMission}
+            <script n:if="$onMission >= 1" defer src="{asset countdownBar.js front}"></script>
+            <script n:if="$onMission < 1" defer src="{asset bar.js front}"></script>
+        {else}
+            {ifset $returned}
+                <script n:if="$returned == true" defer src="{asset countdownBar.js front}"></script>
+                <script n:if="!$returned" defer src="{asset bar.js front}"></script>
+            {/ifset}
+        {/ifset}
+    {/if}
+    {ifset scripts}{include scripts}{/ifset}
+
+</body>
+</html>

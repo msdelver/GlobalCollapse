@@ -1,0 +1,32 @@
+{define bodyClass}page--home{/define}
+{define pageTitle}Rest{/define}
+{define metaDescription}Rest{/define}
+
+{block pageContent}
+<div class="uk-container-small uk-margin-auto" uk-height-viewport="expand: true">
+  <div class="dashboard uk-flex" uk-margin>
+    <div class="uk-card uk-width-expand uk-card-default uk-card-body">
+      {form restForm}
+        <h3 class="uk-card-title">{_general.resting.title}</h3>
+        <p>{_general.resting.intro}</p>
+        {if !$resting}
+          {var $newEnergy = $user->player_stats->energy}
+        {/if}
+        {include '../../components/UI/ProgressBar/ProgressBar.latte',
+          min => 0,
+          max => $user->player_stats->energy_max,
+          value => $newEnergy,
+          type => 'yellow',
+          name => 'energyBar',
+          added => $resting ? $energyGained : null
+        }
+        <p n:if="$resting" class="uk-margin-bottom">{_general.resting.restingSince}{$restingSince|date:'%d %B %Y, %T'}&nbsp;<strong>({$timePassed}&nbsp;{_general.ui.ago})</strong></p>
+        {if $user->player_stats->energy < $user->player_stats->energy_max}
+          <button n:if="!$resting" type="submit" class="uk-button uk-button-primary" n:name="rest">{_general.resting.title}</button>
+        {/if}
+        <button n:if="$resting" type="submit" class="uk-button uk-button-secondary" n:name="wakeup">{_general.resting.stop}</button>
+      {/form}
+    </div>
+  </div>
+</div>
+{/block}

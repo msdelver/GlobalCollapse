@@ -1,0 +1,43 @@
+{define bodyClass}page--login{/define}
+{define pageTitle}Sign-up{/define}
+{define metaDescription}Sign-up{/define}
+
+{block pageContent}
+<div class="uk-container-expand" uk-height-viewport="expand: true">
+  <div class="uk-flex uk-flex-middle uk-flex-column">
+    <h1 class="uk-heading-divider uk-text-center">Create new account</h1>
+    {form signupForm}
+      <div class="uk-margin-bottom">
+        <label class="uk-form-label" for="email">{_general.ui.email}</label>
+        <div class="uk-form-controls">
+            {input email}
+        </div>
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label" for="username">{_general.ui.username}</label>
+        <div class="uk-form-controls">
+            {input username}
+        </div>
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label" for="password">{_general.ui.password}</label>
+        <div class="uk-form-controls">
+            {input password}
+        </div>
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label" for="passwordAgain">{_general.ui.passwordV}</label>
+        <div class="uk-form-controls">
+            {input passwordAgain}
+        </div>
+      </div>
+      <div class="uk-margin uk-flex uk-flex-middle">
+        <div class="uk-form-controls">
+          <button type="submit" class="uk-button uk-button-primary" n:name="save">Create account</button>
+          &nbsp;or&nbsp;<a n:href="Login:default">Login</a>
+        </div>
+      </div>
+    {/form}
+  </div>
+</div>
+{/block}

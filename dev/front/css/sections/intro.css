@@ -1,0 +1,24 @@
+.intro-avatar_holder {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.is-hidden {
+  display: none;
+}
+
+.stat-table-holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  & table {
+    width: 60%;
+    @media (max-width: 640px) {
+      width: 100%;
+    }
+  }
+}

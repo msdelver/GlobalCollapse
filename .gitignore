@@ -1,0 +1,16 @@
+app/config/config.local.neon
+app/config/config.server.neon
+.idea
+bower_components
+node_modules
+/vendor
+www/upload/*/*
+www/dist
+.env
+/init-db.sql
+UGNUtSB5tb35HGFpYSWTJw.php
+RFuEmK02jXUKK5mVXTlIHQ.php
+pnpm-debug.log
+TODO.md
+backups/**
+libs/VoteRewards.php

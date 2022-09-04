@@ -1,0 +1,358 @@
+error:
+	notFound: 'Sorry, the page you are looking for was not found.'
+	goBack: 'Back to homepage'
+
+homepage:
+	introLead: 'Deadly virus is spreading across the globe. Will you survive?'
+	introText: 'New deadly strain of coronavirus is spreading across the entire planet. The world economy is in ruins and governments are collapsing. Join now to see if you can survive in this dystopian future.'
+	introBeta: 'This is an early access, it is unlikely but possible that game accounts might get deleted.'
+
+intro:
+	title: 'Welcome to Global Collapse: Pandemic!'
+	greetings: "Welcome to Global Collapse, %username%! Before you can begin your fight for survival, there's couple of things we have to do first. Let's start by choosing your avatar."
+	steps:
+		1:
+			title: 'Choose your avatar'
+			subtitle: "Don't worry, you can always change it later, in your profile section."
+		2:
+			response: "<p>Great choice, now that's the look of a true survivor! Now let's take a look at your stats.</p>"
+			title: 'Assign your stats'
+			subtitle: "You have 4 starting stat points to distribute between your base stats. Hover over a stat to get more info about it. You can earn stat points in training or when you reach a new level."
+		3:
+			response: "Great, now you're good to go! Or do you need five more minutes?"
+			title: 'Are you ready?'
+			subtitle: "Click continue to start your adventure."
+
+messages:
+	success:
+		registration: "Registration successful! You can now login"
+		restStart: "You went to rest"
+		restEnd: "You gained %reward% energy"
+		trainingStart: "Training started"
+		skillpointsAssigned: "Skillpoints successfully assigned"
+		avatarChanged: "Avatar changed"
+		purchaseSuccessful: "Purchase successful"
+		scavengingStart: "You went scavenging to the wastelands"
+		drugsSold: "Drugs successfully sold"
+		landBought: "Land successfully bought!"
+		buildingBought: "Building bought"
+		buildingUpgraded: "Building upgraded!"
+		landUpgradeStart: "Land upgrade started"
+		buildingCollected: "Building collected!"
+		allBuildingCollected: "All buildings collected!"
+		offerRefreshed: "Generated new offer!"
+	info:
+	warning:
+		cantRefreshOffer: "Can't refresh offer yet. Try again in %minutes% minutes."
+	danger:
+		wrongCredentials: "Wrong password or username"
+		notEnoughMoney: "Not enough money"
+		notEnoughEnergy: "Not enough energy"
+		invalidStats: "Invalid stats, try again"
+		somethingFishy: "Something fishy going on..."
+		orderBuyTooMany: "You're trying to buy more than the vendor has in stock."
+		orderSellTooMany: "You're trying to sell more than you have."
+		orderSellVendorLow: "You're trying to sell more than the vendor can buy."
+		forgotPasswordNoUser: "No user account with this e-mail address was found."
+		buildingNotFound: "Building not found!"
+
+ui:
+	navbar:
+		covidTracker:
+			disclaimer: 'Disclaimer: Real-time statistics multiplied by a magnitude:<br>Infected: 1500<br>Deaths: 15000'
+			disclaimerPlayers: '%users% Registered accounts<br>%online% Players online'
+			infected: 'Infected'
+			dead: 'Dead'
+	sidebar:
+		preparing: '(Preparing)'
+		new: 'NEW'
+		player:
+			account: 'Account'
+			training: 'Training'
+			rest: 'Rest'
+			home: 'Home'
+			buildings: 'Buildings'
+			lands: 'Lands'
+			assaults: 'Assaults'
+			unlockables: 'Unlockables'
+			reward: 'Free Reward'
+			leaderboard: 'Leaderboard'
+		city:
+			title: 'City'
+			bar: 'Bar'
+			market: 'Market'
+			darknet: 'Darknet'
+			wastelands: 'Wastelands'
+		info:
+			title: 'Info'
+			about: 'About'
+			news: "News"
+			donations: 'Donations'
+			changelog: 'Changelog'
+			source: 'Source Code'
+			contact: 'Contact'
+			help: 'Help'
+			tos: 'Terms of Use'
+			copyright: 'Copyright Notice'
+			privacy: 'Privacy Policy'
+	footer:
+		createdBy: 'Created by'
+		translatedBy: '' # leave empty to only appear in RU
+		users: 'users'
+		online: 'online'
+		reportBug: 'Report a bug'
+	login: 'Login'
+	logout: 'Logout'
+	signup: 'Sign-Up'
+	email: 'E-mail'
+	newEmail: 'New e-mail'
+	emailV: 'Repeat e-mail'
+	password: 'Password'
+	passwordV: 'Repeat password'
+	newPassword: 'New password'
+	username: 'Username'
+	lastUpdated: 'Last updated'
+	ago: 'ago'
+	back: 'Back'
+	save: 'Save'
+	reset: 'Reset'
+	confirm: 'Confirm'
+	continue: 'Continue'
+	cancel: 'Cancel'
+	add: 'Add'
+	remove: 'Remove'
+	extra: 'Extra'
+	changeAvatar: 'Change avatar'
+	skip: 'Skip'
+	allPosts: 'All posts'
+	more: 'More'
+	first: 'First'
+	last: 'Last'
+	done: 'Done'
+	date: 'Date'
+	both: 'Both'
+	all: 'All'
+	locationStatus:
+		closed: 'Closed'
+	restore:
+		username: 'Forgot username'
+		password: 'Forgot password'
+
+account:
+	accountSettings: 'Account settings'
+	changePassword: 'Change password'
+	resetPassword: 'Reset password'
+	changeEmail: 'Change e-mail'
+	currentEmail: 'Your current e-mail is'
+	notVotedYet: 'You have NOT voted yet this week.'
+	alreadyVoted: 'You have already voted this week and received $250,000 reward.'
+	voteAgainTime: 'You can vote again in %days% days and %hours% hours.'
+	datetimePrefs:
+		title: 'Date and time preferences'
+		timezone: 'Timezone'
+		dst: 'DST / Summer time'
+		yourTime: 'Your current time is'
+
+faq:
+	title: 'Did you know... ?'
+	items:
+		1: "... that the maximum amount of money a player can have on hand is $999,999,999?"
+		2: "... that you can train your stats while you're on a job?"
+		3: "... that you can still go scavenging while resting? To make the most of your time, go to rest first and then go scavenging. If you go scavenging first, you won't be able to go to rest until you return back."
+		4: '... that you can learn more about the game on our Wiki? Go to <a href="https://github.com/matronator/GlobalCollapse/wiki" target="_blank" rel="noopener">Wiki (in new tab)</a>'
+		5: "... that you can unlock a new building for Ecstasy production by upgrading your land to level 3?"
+		6: "... that you you can increase your maximum energy by leveling up?"
+
+training:
+	train: 'Train'
+	timeLeft: 'Time left:'
+	spLeft: 'Skillpoints left: <strong id="pointsLeft">%sp%</strong>'
+
+support:
+	title: 'Support the project'
+	text: 'You can support this project by donating. Any donation would be a huge help and is much appreciated.'
+	crypto: 'You can also donate using these cryptocurrencies'
+
+pvp:
+	allPlayers: 'All players'
+	assault:
+		winReward: 'Money to win:'
+		winRewardXp: 'XP for victory:'
+		loseReward: "Money to lose:"
+		attack: 'Attack'
+		type: 'Type'
+		opponent: 'Opponent'
+		result: 'Result'
+		victory: 'Victory'
+		defeat: 'Defeat'
+		attacks: 'Attacks'
+		defenses: 'Defenses'
+		attackAgain: 'Assault again'
+
+resting:
+	title: 'Rest'
+	intro: "Rest to replenish your energy. Every half hour of resting gives you 10 energy."
+	restingSince: 'Resting since: '
+	stop: 'Stop resting'
+
+city:
+	bar:
+		closed: 'Bar is closed'
+		closedSocialDistancing: 'The bar is temporary closed due to social distancing, caused by recent increase in coronavirus cases. You can get your missions online from the darknet.'
+		jobs:
+			title: 'Jobs'
+			description: "Choose a job that you like and get to work. You'll get a reward after it's done."
+			duration: 'Duration'
+			energyBarTip: 'Your remaining energy'
+			descriptionDefault: 'Select a job from the list'
+			working: 'Working'
+			workingUntil: "You're on a job until "
+			jobDone: "You finished your job and earned the following rewards:"
+			minutes: 'minutes'
+			acceptJob: 'Accept job'
+			distributeMasks:
+				title: 'Distribute face masks'
+				description: 'Distribute face masks in the city center.'
+			burnBodies:
+				title: 'Burn corpses'
+				description: 'Burn bodies of deceased in an incinerator to help prevent virus spread.'
+			smuggleDrugs:
+				title: 'Smuggle drugs'
+				description: 'Smuggle drugs across the city border.'
+			escortScientist:
+				title: 'Escort a scientist'
+				description: 'Escort a scientist safely through the wastelands to his lab.'
+			constructionHelp:
+				title: 'Construction help'
+				description: 'Help with the construction of a new refuge camp near the city limits.'
+			spyMission:
+				title: 'Spy mission'
+				description: 'Follow an arms dealer from the black market and collect intel.'
+	darknet:
+		about: 'The prices change every 5 hours. Buy for low, sell for high.'
+		priceTotal: 'Price total:'
+	wastelands:
+		wastelandsTitle: 'Wastelands'
+		scavengingTitle: 'Scavenging'
+		scavengingText: 'You can go scavenging for loot into the wastelands outside of the city. You can return from scavenging any time after one hour have passed, but the longer you scavenge, the better reward you get.'
+		scavenging: 'You cannot do anything else, because you are currently scavenging outside of the city. Do you want to return back?'
+		scavengingSince: 'You are scavenging since:'
+		scavengingReturn: 'Return from scavenging'
+		scavengeDone: '<p>You returned to the city after <strong>%hours% hours</strong> of scavenging.</p></p>You sold all the scraps you found and gained some experience.</p>'
+
+stats:
+	stat: 'Stat'
+	currentValue: 'Current value'
+	strength:
+		title: 'Strength'
+		description: "Strength is used for dealing damage in combats"
+		pvp: 'Your strength'
+	stamina:
+		title: 'Stamina'
+		description: "Stamina determines how much damage you can take"
+		pvp: 'Your stamina'
+	speed:
+		title: 'Speed'
+		description: "Speed is used for dodging hits in combats"
+		pvp: 'Your speed'
+	power:
+		title: 'Power'
+		powerTotal: 'Power total'
+		description: "Your total power"
+	energy: 'Energy'
+	health: 'Health'
+	money: 'Money'
+	level: 'Level'
+	xp: 'XP'
+	xpTooltip: 'Your XP'
+
+drugs:
+	drugName: 'Drug'
+	yourStash: 'Your stash'
+	Weed:
+		name: 'Weed'
+		alt:
+			1: 'Cannabis'
+			2: 'THC'
+			3: 'Marijuana'
+	Ecstasy:
+		name: 'Ecstasy'
+		alt:
+			1: 'MDMA'
+			2: 'XTC'
+			3: 'Molly'
+	Meth:
+		name: 'Meth'
+		alt:
+			1: 'Crystal meth'
+			2: 'Methamphetamine'
+	Heroin:
+		name: 'Heroin'
+		alt:
+			1: 'Heroin'
+	Coke:
+		name: 'Coke'
+		alt:
+			1: 'Cocaine'
+
+darknet:
+	postedBy: 'Posted by'
+	inStock: 'In stock'
+	vendorMoney: "Vendor's money"
+	vendorFee: "Vendor's fee"
+	vendorFeeTooltip: "Additional charge for buy orders"
+
+buildings:
+	title: 'Buildings'
+	description: "Buy a land to build production buildings that will earn you resources over time. All production buildings generate resources to its storage every 5 hours. Buildings have limited storage capacity and needs to be collected periodically - buildings with full capacity won't generate additional resources until collected or upgraded to increase storage capacity."
+	showMore: 'Show more'
+	showLess: 'Show less'
+	demolish: 'Demolish'
+	upgrade: 'Upgrade'
+	collect: 'Collect'
+	collectAll: 'Collect All Buildings'
+	buildings:
+		weedhouse:
+			name: 'Weedhouse'
+			description: 'Grows weed'
+			product: 'Weed'
+		meth_lab:
+			name: 'Meth lab'
+			description: 'Cooks methamphetamine'
+			product: 'Meth'
+		ecstasy_lab:
+			name: 'Ecstasy factory'
+			description: 'Pressing ecstasy pills from MDMA'
+			product: 'Ecstasy'
+		poppy_field:
+			name: 'Poppy field'
+			description: 'Harvests opium to make heroin'
+			product: 'Heroin'
+		coca_plantage:
+			name: 'Coca plantage'
+			description: 'Processing coca leaves into cocaine'
+			product: 'Cocaine'
+	lands:
+		title: 'Lands'
+		slots: 'Free slots:'
+		nextLevel: 'Next level:'
+		slotIncreaseTooltip: 'Additional slots after upgrade'
+		upgradeTime: 'Upgrade time:'
+		upgradeCost: 'Upgrade cost:'
+		toggleDetails: 'Hide details'
+	type: 'Type'
+	capacity: 'Capacity'
+	storage: 'Storage'
+	productType: 'Produces'
+	productIncome: 'Yield'
+	incomeDescription: 'Your income per 5 hours'
+	lastCollection: 'Last resource collection:'
+	noCollections: 'No collections yet'
+	types:
+		drugs:
+			name: 'Drug factory'
+			description: 'Produces drugs'
+
+unlockables:
+	title: 'Unlockables'
+	description: "Complete objectives and achieve goals specified on the locked items to unlock them. Each item has a reward you will earn once you reach the goal and unlock it. By unlocking the items you get more power-ups and buffs for your character as well as unlocking new types of buildings you'll be able to build on your land and much more."

@@ -1,0 +1,60 @@
+{**
+*   Building Card
+*   $building     object     Building to show
+*}
+{var $buildingName = $building->buildings->name}
+{var $buildingType = $building->buildings->type}
+{var $baseIncome = $building->buildings->base_income}
+{var $level = $building->level}
+{var $capacity = $building->capacity ? $building->capacity : 0}
+{var $storage = $building->storage ? $building->storage : 0}
+{var $maxLevel = $building->buildings->max_level}
+{var $canUpgrade = (!$maxLevel || $level < $maxLevel) ? true : false}
+{var $upgradeCost = $presenter->getUpgradeCost($building->buildings->price, $building->level)}
+{* Building income = baseIncome + round(baseIncome * ((level-1)/2)^1.05) *}
+{* {var $income = $presenter->buildingsRepository->getBuildingIncome($baseIncome, $level)} *}
+<div class="uk-card uk-card-default uk-card-body uk-padding-small building-card" n:snippet="building-{$building->id}">
+  <div class="building-card-main">
+    <div class="uk-width-1-1">
+      <div class="building-image" style="background-image:url({='dist/front/images/illustrations/buildings/'.$buildingName.'.jpg'|asset});"></div>
+    </div>
+    <span class="uk-text-small">{$storage}g / {$capacity}g</span>
+    <p class="uk-margin-remove" n:if="$storage > 0">
+      <a n:href="collect! $building->id" class="uk-button uk-button-primary uk-button-small ajax">{_general.buildings.collect}</a>
+    </p>
+    <h4 class="building-title">{_general.buildings.buildings.{$buildingName}.name}</h4>
+    <span class="uk-text-small">{_general.stats.level} {$level}</span>
+    <p class="uk-margin-small">
+      <button data-toggle-info="{$building->id}" class="uk-button uk-button-default uk-button-small hide--s" type="button"
+              data-show-more="{_general.buildings.showMore}" data-show-less="{_general.buildings.showLess}">
+              {_general.buildings.showMore}
+      </button>
+    </p>
+  </div>
+  <div class="building-info block-hidden" data-building-info="{$building->id}" uk-height-match=".building-card-main">
+    <p class="uk-text-italic uk-margin-bottom-auto">{_general.buildings.buildings.{$buildingName}.description}</p>
+    <p class="uk-text-center uk-margin-remove" n:if="$canUpgrade">
+      <a n:href="upgrade! $building->id" class="uk-button uk-button-primary uk-button-small ajax">{_general.buildings.upgrade} - ${$upgradeCost|number}</a>
+    </p>
+    <div class="info-block">
+      <div class="uk-text-bold info-block-header order--1 order--1-xs border--b uk-padding-tiny uk-padding-remove-horizontal">{_general.buildings.type}</div>
+      <div class="uk-text-bold info-block-header order--2 order--3-xs border--b uk-padding-tiny uk-padding-remove-horizontal" n:if="$buildingType==drugs">{_general.buildings.productType}</div>
+      <div class="uk-text-bold info-block-header order--3 order--5-xs uk-padding-tiny uk-padding-remove-horizontal" n:if="$buildingType==drugs">{_general.buildings.productIncome}</div>
+      <div class="order--4 order--2-xs border--b border--b-xs uk-padding-tiny uk-padding-remove-horizontal" uk-tooltip="{_general.buildings.types.{$buildingType}.description}">{_general.buildings.types.{$buildingType}.name}</div>
+      <div class="order--5 order--4-xs border--b border--b-xs uk-padding-tiny uk-padding-remove-horizontal" n:if="$buildingType==drugs">{_general.buildings.buildings.{$buildingName}.product}</div>
+      <div class="order--6 order--6-xs uk-padding-tiny uk-padding-remove-horizontal" n:if="$buildingType==drugs">{$building->income}g / 5h</div>
+    </div>
+    <p class="uk-text-right uk-margin-remove">
+      <a href="#" class="uk-button uk-button-danger uk-button-small" uk-toggle="target: #delete-building-{$building->id}">{_general.buildings.demolish}</a>
+      {include '../../UI/Modals/DeleteModal.latte'
+        id => 'delete-building-' . $building->id,
+        ajax => true,
+        action => $presenter->link('demolish!', $building->id),
+        title => 'Confirm building demolition',
+        text => '<p><strong>Do you really want to demolish this building ('.$presenter->translator->translate('general.buildings.buildings.'.$buildingName.'.name').' - level '.$level.')?</strong></p><p>This action is irreversible and you will not get back any resources you already put into this building including upgrades.</p>',
+        cancel => $presenter->translator->translate('general.ui.cancel'),
+        cta => $presenter->translator->translate('general.ui.confirm'),
+      }
+    </p>
+  </div>
+</div>

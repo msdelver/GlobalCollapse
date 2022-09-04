@@ -1,0 +1,109 @@
+{define bodyClass}page--home{/define}
+{define pageTitle}Bar{/define}
+{define metaDescription}Missions{/define}
+
+{define results}
+  <div class="uk-text-center">
+    <div>
+      {_general.city.bar.jobs.jobDone|noescape}
+    </div>
+    <table class="uk-table uk-table-striped uk-table-small uk-width-1-2@m uk-margin-auto">
+      <tr>
+        <td>Money</td>
+        <td>+ ${$money}</td>
+      </tr>
+      <tr class="border-bottom">
+        <td>XP</td>
+        <td>+ {$xp}</td>
+      </tr>
+    </table>
+    <a n:href="Bar:newjobs, $newJobsHash" class="uk-button uk-button-primary uk-button-large">{_general.ui.continue}</a>
+  </div>
+{/define}
+
+{block pageContent}
+<div class="uk-container" uk-height-viewport="expand: true">
+  <div class="dashboard">
+    <div n:if="!$onMission" class="uk-card uk-width-expand uk-card-default uk-padding-small uk-card-body uk-margin-bottom">
+      <div class="uk-card-media illustration-card" style="background-image:url('{$basePath}/dist/front/images/illustrations/bar.jpg');background-position:center;">
+        <h2 class="uk-heading-large">{if $closed}<del n:if="$closed">Bar</del>{else}Bar{/if}</h2>
+        <div class="location-closed" n:if="$closed">{_general.ui.locationStatus.closed}</div>
+      </div>
+      <div class="uk-card-body">
+        {if $closed}
+          <h3>{_general.city.bar.closed}</h3>
+          {if $closeReason == 'social-distancing'}
+            {_general.city.bar.closedSocialDistancing}
+          {/if}
+        {else}
+          <h3 n:if="!$returned">{_general.city.bar.jobs.title}</h3>
+          {if isset($returned) && $returned == true}
+            {include results, money => $moneyPlus, xp => $xpointsPlus}
+          {else}
+            <p>{_general.city.bar.jobs.description}</p>
+          {/if}
+        {/if}
+      </div>
+    </div>
+    {if !$closed}
+      <div n:if="!$returned" class="uk-card uk-width-auto uk-card-default uk-card-body uk-padding-remove-horizontal uk-padding-small uk-padding-remove-top">
+        {if !$onMission}
+          {include '../../components/Jobs/Jobs.latte'}
+        {else}
+          <div class="uk-padding uk-text-center">
+            {var $imgSrc}
+            {var $imgPos}
+            {var $imgDir}
+            {switch $jobName}
+              {case distributeMasks}
+                {php $imgSrc = 'city'}
+                {php $imgPos = 'top'}
+                {php $imgDir = 'horizontal'}
+              {case burnBodies}
+                {php $imgSrc = 'biohazard'}
+                {php $imgPos = 'center'}
+                {php $imgDir = 'vertical'}
+              {case smuggleDrugs}
+                {php $imgSrc = 'drugs'}
+                {php $imgPos = 'center'}
+                {php $imgDir = ''}
+              {case escortScientist}
+                {php $imgSrc = 'wastelands'}
+                {php $imgPos = 'center'}
+                {php $imgDir = 'vertical'}
+              {case constructionHelp}
+                {php $imgSrc = 'buildings'}
+                {php $imgPos = 'center'}
+                {php $imgDir = ''}
+              {case spyMission}
+                {php $imgSrc = 'center'}
+                {php $imgPos = 'center'}
+                {php $imgDir = 'vertical'}
+              {case default}
+                {php $imgSrc = 'bar'}
+                {php $imgPos = 'center'}
+                {php $imgDir = 'horizontal'}
+            {/switch}
+            <div class="job-img-split">
+              <div class="job-info">
+                <h3>{_general.city.bar.jobs.working}</h3>
+                <p>{_general.city.bar.jobs.workingUntil}{$workingUntil|date:'%T'}</p>
+                {include '../../components/CountdownBar/CountdownBar.latte',
+                  minute => $minutes,
+                  sec => $seconds,
+                  max => $timeMax
+                }
+              </div>
+              <div class="uk-inline">
+                <div class="job-image" style="background-image:url('{$basePath}/dist/front/images/illustrations/{$imgSrc}.jpg');background-position:{$imgPos};">
+                </div>
+                {include '../../components/UI/DidYouKnow/DidYouKnow.latte'}
+              </div>
+            </div>
+          </div>
+        {/if}
+      </div>
+    {/if}
+  </div>
+</div>
+{/block}

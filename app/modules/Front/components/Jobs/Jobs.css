@@ -1,0 +1,9 @@
+li.job-item {
+  cursor: pointer;
+}
+li.job-item.selected {
+  background: var(--c-light-yellow);
+}
+.job-link {
+  cursor: pointer;
+}

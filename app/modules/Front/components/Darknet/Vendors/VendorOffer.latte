@@ -1,0 +1,46 @@
+{** ------- DARKNET OFFER ---------------------
+*
+*     $offer        object         Offer object
+*     $id           number         Unique ID to link elements for JS
+*     $noRefresh    bool           If user can refresh
+*}
+{var $drugName = $offer->drug->name}
+<div>
+  <div class="uk-card uk-card-default uk-card-body uk-padding-small darknet-offer"
+       data-offer-id="{$id}" data-offer-price="{$offer->drug->price}" data-vendor-charge="{$offer->vendor->charge}"
+       data-vendor-money="{$offer->vendor->money}" data-offer-stock="{$offer->quantity}">
+    {form vendorOfferForm-{$id}}
+      <h3 class="uk-margin-remove-bottom uk-text-bold">{_general.drugs.{$drugName}.alt.1}</h3>
+      <div class="refresh-offer" n:if="!$noRefresh" uk-tooltip="Generate new offer">
+        <a n:href="refreshOffer, $id" class="uk-icon-button uk-button-default" uk-icon="refresh"></a>
+      </div>
+      <div class="refresh-offer" n:if="$noRefresh" uk-tooltip="Refresh in {$noRefresh / 60|round} minutes">
+        <a href="#" class="uk-icon-button uk-disabled" disabled uk-icon="refresh"></a>
+      </div>
+      <small>{_general.darknet.postedBy} {$offer->vendor->name}</small>
+      <p class="uk-margin-remove-bottom">{_general.darknet.vendorMoney}: ${$offer->vendor->money|number}</p>
+      <p class="uk-margin-remove-top">{_general.darknet.inStock}: {$offer->quantity|number}g</p>
+      <input name="offerInput" id="offerInput-{$id}" type="number" class="uk-input darknet-offer-input" min="0" max="99999999">
+      {input offerId}
+      <small uk-tooltip="title:{_general.darknet.vendorFeeTooltip}">{_general.darknet.vendorFee}: {$offer->vendor->charge * 100}%</small>
+      <div class="uk-child-width-1-2@s uk-grid-divider uk-margin-top uk-grid-small" uk-grid>
+        <div class="uk-text-center">
+          <h3>Buy</h3>
+          {if $offer->quantity > 0}
+            <div class="uk-flex uk-flex-column">
+              <input type="submit" name="offerBuy" class="uk-button uk-button-small uk-button-primary" id="offerBuy-{$id}" data-offer-button="buy" value="${$offer->drug->price * (1 + $offer->vendor->charge)|number}">
+            </div>
+          {/if}
+        </div>
+        <div class="uk-text-center">
+          <h3>Sell</h3>
+          {if $offer->vendor->money >= $offer->drug->price}
+            <div class="uk-flex uk-flex-column">
+              <input type="submit" name="offerSell" class="uk-button uk-button-small uk-button-danger" id="offerSell-{$id}" data-offer-button="sell" value="${$offer->drug->price|number}">
+            </div>
+          {/if}
+        </div>
+      </div>
+    {/form}
+  </div>
+</div>

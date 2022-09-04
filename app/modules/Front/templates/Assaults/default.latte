@@ -1,0 +1,42 @@
+{define bodyClass}page--home{/define}
+{define pageTitle}Assaults{/define}
+{define metaDescription}Assaults{/define}
+
+{* DON'T DELETE - will use later *}
+{define filterNav}
+  {var $filterNavTag = 'uk-filter="target:.assaults-stat-list"'}
+  <div class="uk-padding-remove-left uk-grid-small uk-grid-divider uk-child-width-auto uk-margin-auto" uk-grid>
+    <div>
+      <ul class="uk-subnav uk-subnav-pill">
+        <li class="uk-active" uk-filter-control><a href="#">No filter</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="uk-subnav uk-subnav-pill">
+        <li uk-filter-control="filter: [data-assault-type='attack']; group: data-assault-type"><a href="#">{_general.pvp.assault.attacks}</a></li>
+        <li uk-filter-control="filter: [data-assault-type='defense']; group: data-assault-type"><a href="#">{_general.pvp.assault.defenses}</a></li>
+        <li uk-filter-control="filter: [data-assault-type='all']; group: data-assault-type"><a href="#">{_general.ui.both}</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="uk-subnav uk-subnav-pill">
+        <li uk-filter-control="filter: [data-assault-result='victory']; group: data-assault-result"><a href="#">{_general.pvp.assault.victory}</a></li>
+        <li uk-filter-control="filter: [data-assault-result='defeat']; group: data-assault-result"><a href="#">{_general.pvp.assault.defeat}</a></li>
+        <li uk-filter-control="filter: [data-assault-result]; group: data-assault-result"><a href="#">{_general.ui.all}</a></li>
+      </ul>
+    </div>
+  </div>
+{/define}
+
+{block pageContent}
+  <div class="uk-container-small uk-margin-auto" uk-height-viewport="expand: true">
+    <div class="dashboard dashboard-assaults uk-flex uk-flex-center" uk-margin>
+      <div class="uk-card uk-width-expand uk-card-default uk-card-body uk-text-center">
+        <h2>{$user->username} <small class="uk-text-light uk-text-muted"></small></h2>
+        {include '../../components/Assault/AssaultStats.latte', stats => $aStatsP}
+        <a n:href="Player:leaderboard" class="uk-button uk-button-primary">Leaderboard</a>
+        {include '../../components/Assault/LatestAssaults.latte', assaults => $latestAssaults}
+      </div>
+    </div>
+  </div>
+{/block}

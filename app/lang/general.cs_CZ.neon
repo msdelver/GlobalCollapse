@@ -1,0 +1,346 @@
+error:
+	notFound: 'Stránka, kterou hledáte, bohužel nebyla nalezena.'
+	goBack: 'Zpět na úvodní stránku'
+
+homepage:
+	introLead: 'Smrtelný virus se šíří světem. Dokážeš přežít?'
+	introText: 'Nový smrtelný typ koronaviru se šíří po celé planetě. Světová ekonomika je v ruinách a vlády se hroutí. Přidej se nyní a zjisti, jestli dokážeš přežít v této dystopické budoucnosti.'
+	introBeta: 'Toto je zatím pouze testovní Early Access, je možné (ale nepravděpodobné) že herní účty mohou být smazány.'
+
+intro:
+	title: 'Vítej do Global Collapse: Pandemic!'
+	greetings: "Vítej do Global Collapse, %username%! Než budeš moct začít svůj boj o přežití, je tu pár věcí které musíš udělat. Začneme tím že si vybereš svůj avatar."
+	steps:
+		1:
+			title: 'Vyber si avatar'
+			subtitle: "Buď v klidu, můžeš ho kdykoliv změnit na stránce tvého profilu."
+		2:
+			response: "<p>Dobrá volba, takhle má vypadat pravý bojovník! Nyní se podíváme na tvé schopnosti.</p>"
+			title: 'Nastav si své dovednosti'
+			subtitle: "Do začátku máš 4 startovní skillpointy, které rozdělíš mezi své atributy. Přejeď kurzorem na jednotlivé atributy pro víc informací. Atributy budeš moct zvýšit buď tréninkem, nebo dosáhnutí nové úrovně postavy."
+		3:
+			response: "Skvělý, teď jsi připraven vyrazit! Nebo snad potřebuješ ještě pár minut?"
+			title: 'Jsi připraven?'
+			subtitle: "Klikni na tlačítko a zační své dobrodružství."
+
+messages:
+	success:
+		registration: "Registrace dokončena! Nyní se můžeš přihlásit"
+		restStart: "Šel jsi odpočívat"
+		restEnd: "Získal jsi %reward% energie"
+		trainingStart: "Trénink začal"
+		skillpointsAssigned: "Skillpointy úspěšně rozděleny"
+		avatarChanged: "Avatar změněn"
+		purchaseSuccessful: "Nákup úspěšný"
+		scavengingStart: "Šel jsi na průzkum do pustin"
+		drugsSold: "Drogy úspěšně prodány"
+		landBought: "Pozemek úspěšně zakoupen!"
+		buildingBought: "Budova zakoupena"
+		buildingUpgraded: "Budova vylepšena!"
+		landUpgradeStart: "Rozšiřování pozemku započato"
+		buildingCollected: "Budova sesbírána!"
+		allBuildingCollected: "Všechny budovy sesbírány!"
+	info:
+	warning:
+	danger:
+		wrongCredentials: "Špatné heslo nebo uživatelské jméno"
+		notEnoughMoney: "Nedostatek peněz"
+		notEnoughEnergy: "Nedostatek energie"
+		invalidStats: "Neplatné atributy, zkus to znovu"
+		somethingFishy: "Čuchám čuchám lotrovinu..."
+		orderBuyTooMany: "Tvá objednávka je větší než má vendor na skladě."
+		orderSellTooMany: "Nemůžeš prodat víc než máš."
+		orderSellVendorLow: "Tvá objednávka je za víc peněz než má vendor k dispozici."
+		forgotPasswordNoUser: "Žádný hráč s tímto e-mailem nebyl nalezen."
+		buildingNotFound: "Budova nenalezena!"
+
+ui:
+	navbar:
+		covidTracker:
+			disclaimer: 'Skutečné statistiky vynásobeny hodnotou:<br>Nakažených: 1500<br>Úmrtí: 15000'
+			disclaimerPlayers: '%users% Registrovaných účtů<br>%online% Hráčů online'
+			infected: 'Nakažených'
+			dead: 'Úmrtí'
+	sidebar:
+		preparing: '(Již brzy)'
+		new: 'NOVÉ'
+		player:
+			account: 'Účet'
+			training: 'Trénink'
+			rest: 'Odpočinek'
+			home: 'Domov'
+			buildings: 'Budovy'
+			assaults: 'Přepadení'
+			unlockables: 'Odměny'
+			reward: 'Dárek zdarma'
+			leaderboard: 'Žebříček'
+		city:
+			title: 'Město'
+			bar: 'Bar'
+			market: 'Tržnice'
+			darknet: 'Darknet'
+			wastelands: 'Pustina'
+		info:
+			title: 'Info'
+			about: 'O hře'
+			news: "Novinky"
+			donations: 'Podpořte nás'
+			changelog: 'Seznam změn'
+			source: 'Zdrojový kód'
+			contact: 'Kontakt'
+			help: 'Pomoc'
+			tos: 'Podmínky'
+			copyright: 'Vlastnická práva'
+			privacy: 'Ochrana soukromí'
+	footer:
+		createdBy: 'Vytvořil'
+		translatedBy: '' # leave empty to only appear in RU
+		users: 'hráčů'
+		online: 'online'
+		reportBug: 'Nahlásit chybu'
+	login: 'Přihlásit se'
+	logout: 'Odhlásit se'
+	signup: 'Vytvořit účet'
+	email: 'E-mail'
+	newEmail: 'Nový e-mail'
+	emailV: 'E-mail znovu'
+	password: 'Heslo'
+	passwordV: 'Heslo znovu'
+	newPassword: 'Nové heslo'
+	username: 'Username'
+	lastUpdated: 'Naposledy aktualizováno'
+	ago: 'zpátky'
+	back: 'Zpět'
+	save: 'Uložit'
+	reset: 'Reset'
+	confirm: 'Potvrdit'
+	continue: 'Pokračovat'
+	cancel: 'Zrušit'
+	add: 'Přidat'
+	remove: 'Odebrat'
+	extra: 'Extra'
+	changeAvatar: 'Změnit avatar'
+	skip: 'Přeskočit'
+	allPosts: 'Načíst další'
+	more: 'Více'
+	first: 'První'
+	last: 'Poslední'
+	done: 'Hotovo'
+	date: 'Datum'
+	both: 'Obojí'
+	all: 'Vše'
+	locationStatus:
+		closed: 'Zavřeno'
+	restore:
+		username: 'Zapomenutá přezdívka'
+		password: 'Zapomenuté heslo'
+
+account:
+	accountSettings: 'Nastavení účtu'
+	changePassword: 'Změnit heslo'
+	resetPassword: 'Resetovat heslo'
+	notVotedYet: 'Tento týden jsi ještě nehlasoval.'
+	alreadyVoted: 'Tento týden jsi již hlasoval a obdržel jsi $250,000 jako odměnu.'
+	voteAgainTime: 'Znovu budeš moct hlasovat za %days% dny a %hours% hodiny.'
+
+faq:
+	title: 'Věděl jsi že... ?'
+	items:
+		1: "... hráč u sebe nemůže mít více než $999,999,999?"
+		2: "... můžeš trénovat i když zrovna pracuješ?"
+		3: "... můžeš jít na průzkum i když právě odpočíváš? Abys nejlépe využil svůj čas, nejprve jdi odpočívat a potom jdi na průzkum. Když půjdeš nejdřív na průzkum, už nebudeš moct jít odpočívat, dokud se zase nevrátíš zpět."
+		4: '... že se můžeš o hře naučit více na naší Wiki? Jdi na <a href="https://github.com/matronator/GlobalCollapse/wiki" target="_blank" rel="noopener">Wiki (na novém panelu)</a>'
+		5: "... že si můžeš odemknout budovu na výrobu extáze upgradováním tvého pozemku na level 3?"
+		6: "... že si levelováním své postavy můžeš navýšit tvojí maximální energii?"
+
+training:
+	train: 'Trénovat'
+	timeLeft: 'Zbývá:'
+	spLeft: 'Dostupné skillpointy: <strong id="pointsLeft">%sp%</strong>'
+
+support:
+	title: 'Podpoř projekt'
+	text: 'Projekt můžeš podpořit peněžitým příspěvkem. Jakákoliv částka je velká pomoc a velmi vítána a moc si toho ceníme.'
+	crypto: 'Také můžeš darovat tyto kryptoměny'
+
+pvp:
+	allPlayers: 'Všichni hráči'
+	assault:
+		winReward: 'Peníze za výhru:'
+		winRewardXp: 'Zkušenosti za výhru:'
+		loseReward: "Ztráta za prohru:"
+		attack: 'Zaútoč'
+		type: 'Typ'
+		opponent: 'Protivník'
+		result: 'Výsledek'
+		victory: 'Výhra'
+		defeat: 'Porážka'
+		attacks: 'Útoky'
+		defenses: 'Obrany'
+		attackAgain: 'Zaútoč znovu'
+
+resting:
+	title: 'Odpočinek'
+	intro: "Odpočiň si a dobij si tak energii. Každou hodinu získáš zpět 20 energie."
+	restingSince: 'Odpočíváš od: '
+	stop: 'Vzbudit se'
+
+city:
+	bar:
+		closed: 'Bar je zavřený'
+		closedSocialDistancing: 'The bar is temporary closed due to social distancing, caused by recent increase in coronavirus cases. You can get your missions online from the darknet.'
+		jobs:
+			title: 'Práce'
+			description: "Vyber si jakou práci chceš vzít a pusť se do ní. Až ji uděláš, dostaneš odměnu."
+			duration: 'Délka'
+			energyBarTip: 'Tvá zbývající energie'
+			descriptionDefault: 'Vyber si práci se seznamu'
+			working: 'Pracuješ'
+			workingUntil: "Pracuješ do "
+			jobDone: "Dokončil jsi práci a získal jsi tyto odměny:"
+			minutes: 'minut'
+			acceptJob: 'Přijmout práci'
+			distributeMasks:
+				title: 'Distribuce roušek'
+				description: 'Rozdávej roušky v centru města.'
+			burnBodies:
+				title: 'Pálení mrtvol'
+				description: 'Spal mrtvoly nakažených v peci za městem, pro omezení šíření viru.'
+			smuggleDrugs:
+				title: 'Pašování drog'
+				description: 'Propašuj drogy přes hranice města.'
+			escortScientist:
+				title: 'Eskortuj vědce'
+				description: 'Bezpečně eskortuj vědce přes pustinu do jeho laboratoře.'
+			constructionHelp:
+				title: 'Pomoc na stavbě'
+				description: 'Help with the construction of a new refuge camp near the city limits.'
+			spyMission:
+				title: 'Špionáž'
+				description: 'Pronásleduj obchodníka se zbraněmi z černého trhu a sbírej informace.'
+	darknet:
+		about: 'Ceny se mění každých 5 hodin. Nakup za málo, prodej za hodně.'
+		priceTotal: 'Cena celkem:'
+	wastelands:
+		wastelandsTitle: 'Pustina'
+		scavengingTitle: 'Průzkum'
+		scavengingText: 'Můžeš jít na průzkum do pustiny za městem hledat kořisti. Z průzkumu se můžeš vrátit kdykoliv po uplynutí jedné hodiny, ale čím déle budeš na průzkumu, tím větší bude tvůj úlovek.'
+		scavenging: 'Nemůžeš dělat nic jiného, protože jsi právě na průzkumu v pustině. Chceš se vrátit zpátky do města?'
+		scavengingSince: 'Jsi na průzkumu od:'
+		scavengingReturn: 'Vrátit se z průzkumu'
+		scavengeDone: '<p>Vrátil jsi se do města po <strong>%hours% hodinách</strong> na průzkumu.</p></p>Za peníze jsi prodal všechny úlovky co jsi našel a ještě jsi k tomu získal nějaké zkušenosti navíc.</p>'
+
+stats:
+	stat: 'Atributy'
+	currentValue: 'Současná hodnota'
+	strength:
+		title: 'Síla'
+		description: "Síla určuje kolik zranění udělíš při soubojích"
+		pvp: 'Tvá síla'
+	stamina:
+		title: 'Výdrž'
+		description: "Výdrž určuje kolik úderů vydržíš"
+		pvp: 'Tvý výdrž'
+	speed:
+		title: 'Rychlost'
+		description: "Rychlostí se vyhýbáš úderům"
+		pvp: 'Tvý rychlost'
+	power:
+		title: 'Moc'
+		powerTotal: 'Celková síla'
+		description: "Tvá celková síla"
+	energy: 'Energie'
+	health: 'Zdraví'
+	money: 'Peníze'
+	level: 'Level'
+	xp: 'XP'
+	xpTooltip: 'Tvé zkušenosti'
+
+drugs:
+	drugName: 'Droga'
+	yourStash: 'Ty máš'
+	Weed:
+		name: 'Tráva'
+		alt:
+			1: 'Konopí'
+			2: 'THC'
+			3: 'Marihuana'
+	Ecstasy:
+		name: 'Extáze'
+		alt:
+			1: 'MDMA'
+			2: 'Éčko'
+			3: 'Emko'
+	Meth:
+		name: 'Pervitin'
+		alt:
+			1: 'Perník'
+			2: 'Piko'
+	Heroin:
+		name: 'Heroin'
+	Coke:
+		name: 'Kokain'
+		alt:
+			1: 'Koks'
+
+darknet:
+	postedBy: 'Přidal'
+	inStock: 'Na skladě'
+	vendorMoney: "Vendor má peněz"
+	vendorFee: "Poplatek vendora"
+	vendorFeeTooltip: "Poplatek navíc pro nákupy"
+
+buildings:
+	title: 'Budovy'
+	description: 'Kup si pozemek, kde budeš moci stavět budovy, které ti budou produkovat komodity na prodej.'
+	showMore: 'Více'
+	showLess: 'Skrýt'
+	demolish: 'Zbourat'
+	upgrade: 'Vylepšit'
+	collect: 'Vybrat'
+	collectAll: 'Vybrat vše najednou'
+	buildings:
+		weedhouse:
+			name: 'Pěstírna'
+			description: 'Pěstuje hulení'
+			product: 'Tráva'
+		meth_lab:
+			name: 'Varna pika'
+			description: 'Vaří peří, perníček'
+			product: 'Pervitin'
+		ecstasy_lab:
+			name: 'Tlačírna éčka'
+			description: 'Pressuje extáze z krystalů emka'
+			product: 'Extáze'
+		poppy_field:
+			name: 'Makové pole'
+			description: 'Sklízí opium na výrobu heráku'
+			product: 'Heroin'
+		coca_plantage:
+			name: 'Plantáž koky'
+			description: 'Z listů koky na kokain'
+			product: 'Kokain'
+	lands:
+		title: 'Pozemky'
+		slots: 'Volná místa:'
+		nextLevel: 'Další úroveň:'
+		slotIncreaseTooltip: 'Místa navíc po vylepšení'
+		upgradeTime: 'Čas vylepšení:'
+		upgradeCost: 'Cena vylepšení:'
+		toggleDetails: 'Skrýt detaily'
+	type: 'Druh'
+	capacity: 'Kapacita'
+	storage: 'Uskladněno'
+	productType: 'Produkt'
+	productIncome: 'Výnos'
+	incomeDescription: 'Tvé příjmy každých 5 hodin'
+	lastCollection: 'Naposledy vybráno:'
+	noCollections: 'Zatím ještě nevybráno'
+	types:
+		drugs:
+			name: 'Výroba drog'
+			description: 'Produkuje drogy'
+
+unlockables:
+	title: 'Odměny'
+	description: "Odemkni si odměny úspěšným splněním požadavků a dokončením cílů uvedených na zamčených položkách. Dosáhnutím cíle si danou položku odemkneš a získáš tak její odměnu. Odemykáním odměn můžeš získat nová vylepšení a zesílení atributů pro svoji postavu, nebo si také například můžeš odemknout nové typy budov, které si pak budeš moct postavit na svém pozemku a další odměny."

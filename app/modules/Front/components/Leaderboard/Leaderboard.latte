@@ -1,0 +1,30 @@
+{**
+*     Leaderboard
+*
+*     array     $users          Users to display
+*     number    $page           Page to display
+*     number    $lastPage       Last page
+*     number    $itemsPerPage   Items per page
+*}
+
+<table class="uk-table uk-table-small uk-table-hover uk-table-striped">
+  <thead>
+    <tr>
+      <th class="uk-text-nowrap uk-table-shrink">#</th>
+      <th class="uk-text-nowrap uk-table-expand">Player</th>
+      <th class="uk-text-nowrap">Power</th>
+    </tr>
+  </thead>
+  <tbody>
+    {foreach $users as $otherUser}
+      <tr>
+        <td class="uk-text-nowrap">{$iterator->counter + (($page - 1) * $itemsPerPage)}</td>
+        <td class="uk-text-nowrap">
+          <img src="{$basePath}/dist/front/images/default-avatars/{$otherUser->avatar}" class="uk-comment-avatar" width="24" height="24">
+          &nbsp;{if $otherUser->username != $user->username}<a n:href="Player:detail, $otherUser->username">{$otherUser->username}</a>{else}{$user->username}{/if}
+        </td>
+        <td class="uk-text-nowrap">{$otherUser->player_stats->power}</td>
+      </tr>
+    {/foreach}
+  </tbody>
+</table>

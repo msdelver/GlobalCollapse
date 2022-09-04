@@ -1,0 +1,11 @@
+{define bodyClass}page--home{/define}
+{define pageTitle}Player detail{/define}
+{define metaDescription}Player detail{/define}
+
+{block pageContent}
+  <div class="uk-container-small uk-margin-auto" uk-height-viewport="expand: true">
+    <div class="dashboard dashboard-assaults uk-flex" uk-margin>
+      {include '../../components/Assault/PlayerCard.latte', player => $otherPlayer, stats => $aStatsV}
+    </div>
+  </div>
+{/block}
